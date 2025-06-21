@@ -1,4 +1,12 @@
 [
-	{"say": "Looks like its test timeline", "set_speaker": "???"},
-	{"say": "Hello everynyan!"},
+	{ "say": "Looks like its test timeline", "set_speaker": "???" },
+	{ "say": "Hello everynyan!1" },
+	{ "print_text": []},
+	{ "print_text": []},
+	{ "print_text": []},
+	{ "say": "Hello everynyan!2" },
+	{ "say": "Hello everynyan!3" },
+	{ "print_text": []},
+	{ "print_text": []},
+	{ "print_text": []},
 ]
