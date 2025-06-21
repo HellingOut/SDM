@@ -1,10 +1,6 @@
 class_name DialogParser
 extends Node
 
-## Script for setting your own functions for using in dialog
-## (not implemented yet)
-@export var dialog_functions: Script
-
 signal dialog_started
 signal text_changed
 signal dialog_ended
