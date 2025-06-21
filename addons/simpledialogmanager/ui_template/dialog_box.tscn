@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://boi6ookg4i1wr"]
+
+[ext_resource type="Script" uid="uid://gk6lcr87urnk" path="res://addons/simpledialogmanager/ui_template/dialog_box.gd" id="1_svbij"]
+[ext_resource type="Script" uid="uid://bbav0ptifcph8" path="res://addons/simpledialogmanager/ui_template/textbox.gd" id="2_i22jp"]
+[ext_resource type="Script" uid="uid://b7nle86pew3lp" path="res://addons/simpledialogmanager/classes/dialog_parser.gd" id="3_hhmjc"]
+
+[node name="DialogBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svbij")
+
+[node name="DebugInfo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -153.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Привет"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_i22jp")
+
+[node name="LetterTimer" type="Timer" parent="Panel/Label"]
+wait_time = 0.05
+autostart = true
+
+[node name="DialogParser" type="Node" parent="."]
+script = ExtResource("3_hhmjc")
+metadata/_custom_type_script = "uid://b7nle86pew3lp"
+
+[connection signal="timeout" from="Panel/Label/LetterTimer" to="Panel/Label" method="_on_timer_timeout"]

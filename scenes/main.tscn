@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://de72gkf8o4sia"]
+
+[sub_resource type="GDScript" id="GDScript_sgp6g"]
+script/source = "extends OptionButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	for file in DirAccess.get_files_at(\"res://dialogs/\"):
+		add_item(file)
+
+func _on_button_pressed() -> void:
+	DialogBox.dialog_parser.start_dialog(
+		load(\"res://dialogs/\" + get_item_text(selected))
+	)
+"
+
+[node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_bottom = 55.0
+grow_horizontal = 0
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+script = SubResource("GDScript_sgp6g")
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/OptionButton" method="_on_button_pressed"]
