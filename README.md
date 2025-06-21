@@ -2,7 +2,7 @@
 Simple Dialog Manager - JSON based dialog manager for Godot 4. Lightweight and easy to use
 
 # Usage
-Use `DialogParser` class for loading and playing dialogs (example with user interface provided). Printed text located in `output_text` property. To create own functions, extend DialogParser script and add new functions to new script
+Use `DialogParser` class for loading and playing dialogs (UI example provided). Printed text located in `output_text` property. To create own functions, extend DialogParser script and add new functions to new script
 
 # Dialog example:
 ```json
